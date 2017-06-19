@@ -1,0 +1,47 @@
+ <div class="landingPageContainer">
+  <div class="copy">
+     <p id="heading" style="font-size: 3em; padding-top: 2%; padding-right: 1%">Önska namn och nummer till din personliga nummerlapp!<p>
+    <div class="competitorsNbr">
+      <p style="font-size: 2em;">{{model.name}}</p>
+      <p style="margin-bottom: -1%; font-size: 5em">{{model.idNbr}}</p>
+        <div class="competitorsNbrFooter">
+          <img src="./assets/fist.png" width="15%" height="15%">
+          <h3 style="padding-left: 5%;">ToughRSSt 2018</h3>
+        </div>
+    </div>
+      <p id="heading" style="font-size: 2em; padding-top: 2%; padding-right: 1%">Eller fyll i e-post för att ta del av vårt nyhetsbrev :)<p> 
+  </div>
+  <div class="forms">
+    <div class="formContainer">
+      <form>
+        <div class="form-group">
+          <label for="name">Namn</label>
+          <input type="text" class="form-control" id="name"
+          [(ngModel)]="model.name" name="name"
+                #name="ngModel"        
+          >
+        </div>
+        <div class="form-group">
+          <label for="id">Önskat nummer</label>
+          <input type="text" class="form-control" id="idNbr"
+          [(ngModel)]="model.idNbr" name="idNbr"
+                #idNbr="ngModel"
+          >        
+        </div>
+        <div class="form-group">
+          <label for="email">E-post</label>
+          <input type="text" class="form-control" id="email" 
+          required
+          [(ngModel)]="model.email" name="email"
+                #email="ngModel"        
+          >
+          <div [hidden]="email.valid || email.pristine"
+              class="alert alert-danger">
+            E-post måste anges... <br> och vara korrekt!
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div> 
+ </div>

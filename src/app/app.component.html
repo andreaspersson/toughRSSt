@@ -1,3 +1,26 @@
-<h1>
-  {{title}}
-</h1>
+<div id="gradient"></div>
+
+  <div class="flexRow">
+    <div class="landingPage">            
+        <landingpage></landingpage>                 
+    </div> <!-- Landingpage -->
+  <div class="flexColumn">
+     <div *ngFor="let item of rssArray"  >
+        <div class="rssItem">
+           <img id="image" src={{item.abstract}}>
+            <div class="figcaption">
+              <h4 id="h4">@{{item.source}}</h4>                
+               <p id="imageText" [innerHTML]="item.description"></p>
+            </div>
+        
+        </div> <!--rssItem -->
+      </div> <!-- Loop -->
+  </div> <!-- flexColumn -->
+  </div> <!-- flexRow -->  
+  
+  <div id="bridge">
+    <img width="150px" src='./assets/oresundsbron.png'>
+  </div> 
+
+
+  
